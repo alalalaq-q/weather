@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>天气查询</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>☁️ 天气查询</h1>
+      <div class="search-bar">
+        <input
+          id="search-input"
+          type="text"
+          placeholder="输入城市名，如：北京 / Shanghai / Tokyo"
+          autocomplete="off"
+        />
+        <button id="search-btn">查询</button>
+        <button id="locate-btn" title="使用我的位置">📍</button>
+      </div>
+      <div id="suggestions" class="suggestions hidden"></div>
+    </header>
+
+    <main>
+      <!-- 当前天气 -->
+      <section id="current" class="card current-card hidden">
+        <div class="current-main">
+          <div class="temp-block">
+            <span id="current-temp" class="temp">--</span>
+            <span class="unit">°C</span>
+          </div>
+          <div class="weather-icon" id="current-icon">🌤️</div>
+        </div>
+        <div class="current-info">
+          <h2 id="current-location">--</h2>
+          <p id="current-desc" class="desc">--</p>
+          <div class="details">
+            <span>体感 <b id="feels-like">--</b></span>
+            <span>湿度 <b id="humidity">--</b></span>
+            <span>风速 <b id="wind">--</b></span>
+            <span>气压 <b id="pressure">--</b></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 天预报 -->
+      <section id="forecast" class="card forecast-card hidden">
+        <h3>未来 7 天预报</h3>
+        <div id="forecast-list" class="forecast-list"></div>
+      </section>
+    </main>
+
+    <p id="error" class="error hidden"></p>
+    <p id="loading" class="loading hidden">查询中…</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
